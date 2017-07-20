@@ -38,18 +38,31 @@
             <p>Purchase contracts to earn a monthly income, some contracts require certain workers / buildings &amp; equipment upgrades to purchase but may be more lucretive than contracts that don't.</p>
           </div>
 
-            <div class="inner-box">
-              <div class="inner-box-image">
-                <img src="http://placehold.it/130x130">
-              </div>
-              <div class="inner-box-text">
-                <h3>Job One</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-              <div class="inner-box-button">
-                <button class="inner-button" onclick="jobOne()" id="jobOneBtn">Do Job</button>
-              </div>
+          <div class="inner-box">
+            <div class="inner-box-image">
+              <img src="http://placehold.it/130x130">
             </div>
+            <div class="inner-box-text">
+              <h3>Job One</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><strong>Takes 10 Seconds</strong></p>
+            </div>
+            <div class="inner-box-button">
+              <button class="inner-button" onclick="jobOne()" id="jobOneBtn">Do Job</button>
+            </div>
+          </div>
+
+          <div class="inner-box">
+            <div class="inner-box-image">
+              <img src="http://placehold.it/130x130">
+            </div>
+            <div class="inner-box-text">
+              <h3>Job Two</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><strong>Takes 30 Seconds</strong></p>
+            </div>
+            <div class="inner-box-button">
+              <button class="inner-button" onclick="jobTwo()" id="jobTwoBtn">Do Job</button>
+            </div>
+          </div>
 
 
         </div>
@@ -67,7 +80,7 @@
             <div class="inner-box-text">
               <h3>Web Designer</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <h3>Cost: <span id="webDesignerCost">0</span></h3>
+              <h3>Cost: <span id="webDesignerCost">0</span> / Earns <span id="webdesEarns">0</span> Per Day</h3>
             </div>
             <div class="inner-box-button">
               <button class="inner-button worker-btn" onclick="buyWebDesigner()">Hire</button>
@@ -81,10 +94,52 @@
             <div class="inner-box-text">
               <h3>Web Developer</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <h3>Cost: <span id="webDeveloperCost">0</span></h3>
+              <h3>Cost: <span id="webDeveloperCost">0</span> / Earns <span id="webdevEarns">0</span> Per Day</h3>
             </div>
             <div class="inner-box-button">
               <button class="inner-button worker-btn" onclick="buyWebDeveloper()">Hire</button>
+            </div>
+          </div>
+
+          <div class="inner-box">
+            <div class="inner-box-image">
+              <img src="img/employees/seo.png">
+            </div>
+            <div class="inner-box-text">
+              <h3>SEO Specialist</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <h3>Cost: <span id="seoSpecCost">0</span> / Earns <span id="seoEarns">0</span> Per Day</h3>
+            </div>
+            <div class="inner-box-button">
+              <button class="inner-button worker-btn" onclick="buySeoSpec()">Hire</button>
+            </div>
+          </div>
+
+          <div class="inner-box">
+            <div class="inner-box-image">
+              <img src="img/employees/uiux.png">
+            </div>
+            <div class="inner-box-text">
+              <h3>UI/UX Designer</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <h3>Cost: <span id="uiuxDesCost">0</span> / Earns <span id="uiuxEarns">0</span> Per Day</h3>
+            </div>
+            <div class="inner-box-button">
+              <button class="inner-button worker-btn" onclick="buyUiuxDes()">Hire</button>
+            </div>
+          </div>
+
+          <div class="inner-box">
+            <div class="inner-box-image">
+              <img src="img/employees/fullstack.png">
+            </div>
+            <div class="inner-box-text">
+              <h3>Fullstack Developer</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <h3>Cost: <span id="fullstackDevCost">0</span> / Earns <span id="fullstackEarns">0</span> Per Day</h3>
+            </div>
+            <div class="inner-box-button">
+              <button class="inner-button worker-btn" onclick="buyFullstackDev()">Hire</button>
             </div>
           </div>
 
@@ -212,10 +267,13 @@
 
       <div class="game-right-row">
         <div class="section">
-          <h3>Web Designers Hired: <span id="webDesignerNumber">0</span></h3>
+          <h3>Web Designers: <span id="webDesignerNumber">0</span></h3>
+          <h3>SEO Specialists: <span id="seoSpecNumber">0</span></h3>
+          <h3>Fullstack Developers: <span id="fullstackDevNumber">0</span></h3>
         </div>
         <div class="section">
-        <h3>Web Developers Hired: <span id="webDeveloperNumber">0</span></h3>
+        <h3>Web Developers: <span id="webDeveloperNumber">0</span></h3>
+        <h3>UI/UX Designers: <span id="uiuxDesNumber">0</span></h3>
         </div>
       </div>
 

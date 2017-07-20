@@ -9,12 +9,9 @@ function incMoney(number){
 // JOBS
 
 // First Job
-const jobOneTime = 11;
-var jobOneState = 0;
-var timesRun = 0;
 function jobOne(){
   jobOneBtn.disabled = true;
-  var jobOneState = 1;
+
   setTimeout(function(jobOne){
     money = money + 100;
     document.getElementById('money').innerHTML = money;
@@ -22,11 +19,17 @@ function jobOne(){
   }, 10000);
 };
 
-//Countdown timer for when jobOneBtn is pressed.
-//window.setInterval(function(){
-//  jobOneTime = jobOneTime - 1;
-//  document.getElementById('jobOneBtn').innerHTML = jobOneTime;
-//}, 1000);
+// Second Job
+function jobTwo(){
+  jobTwoBtn.disabled = true;
+  setTimeout(function(jobTwo){
+    money = money + 1000;
+    document.getElementById('money').innerHTML = money;
+    jobTwoBtn.disabled = false;
+  }, 30000);
+};
+
+
 
 
 // WORKERS
@@ -36,7 +39,8 @@ var maxWorkerNum = 4;
 // Web Designer
 var webDesignerNumber = 0;
 const webDesignerCost = 100;
-const webDesignerMoney = 5
+const webDesignerMoney = 5;
+document.getElementById('webdesEarns').innerHTML = "£" + webDesignerMoney;
 document.getElementById('webDesignerCost').innerHTML = "£" + webDesignerCost;
 function buyWebDesigner(){
   if(money >= webDesignerCost){
@@ -60,7 +64,8 @@ function buyWebDesigner(){
 // Web Developer
 var webDeveloperNumber = 0;
 const webDeveloperCost = 150;
-const webDeveloperMoney = 7
+const webDeveloperMoney = 7;
+document.getElementById('webdevEarns').innerHTML = "£" + webDeveloperMoney;
 document.getElementById('webDeveloperCost').innerHTML = "£" + webDeveloperCost;
 function buyWebDeveloper(){
   if(money >= webDeveloperCost){
@@ -81,6 +86,80 @@ function buyWebDeveloper(){
   };
 };
 
+// SEO Specialist
+var seoSpecNumber = 0;
+const seoSpecCost = 150;
+const seoSpecMoney = 7;
+document.getElementById('seoEarns').innerHTML = "£" + seoSpecMoney;
+document.getElementById('seoSpecCost').innerHTML = "£" + seoSpecCost;
+function buySeoSpec(){
+  if(money >= seoSpecCost){
+    money = money - seoSpecCost;
+    seoSpecNumber = seoSpecNumber + 1;
+    workerNum = workerNum + 1;
+    document.getElementById('seoSpecNumber').innerHTML = seoSpecNumber;
+    document.getElementById('workerNum').innerHTML = workerNum;
+    if(workerNum === maxWorkerNum){
+      var btn = document.getElementsByClassName("worker-btn");
+      for(var i = 0; i < btn.length; i++){
+      btn[i].disabled = true;
+      btn[i].innerHTML = "Upgrade Building";
+      };
+    };
+  } else {
+    console.log("You do not have enough money, earn some more and try again.");
+  };
+};
+
+// UI/UX Designer
+var uiuxDesNumber = 0;
+const uiuxDesCost = 150;
+const uiuxDesMoney = 7;
+document.getElementById('uiuxEarns').innerHTML = "£" + uiuxDesMoney;
+document.getElementById('uiuxDesCost').innerHTML = "£" + uiuxDesCost;
+function buyUiuxDes(){
+  if(money >= uiuxDesCost){
+    money = money - uiuxDesCost;
+    uiuxDesNumber = uiuxDesNumber + 1;
+    workerNum = workerNum + 1;
+    document.getElementById('uiuxDesNumber').innerHTML = uiuxDesNumber;
+    document.getElementById('workerNum').innerHTML = workerNum;
+    if(workerNum === maxWorkerNum){
+      var btn = document.getElementsByClassName("worker-btn");
+      for(var i = 0; i < btn.length; i++){
+      btn[i].disabled = true;
+      btn[i].innerHTML = "Upgrade Building";
+      };
+    };
+  } else {
+    console.log("You do not have enough money, earn some more and try again.");
+  };
+};
+
+// Fullstack Developer
+var fullstackDevNumber = 0;
+const fullstackDevCost = 150;
+const fullstackDevMoney = 7;
+document.getElementById('fullstackEarns').innerHTML = "£" + fullstackDevMoney;
+document.getElementById('fullstackDevCost').innerHTML = "£" + uiuxDesCost;
+function buyFullstackDev(){
+  if(money >= uiuxDesCost){
+    money = money - fullstackDevCost;
+    fullstackDevNumber = fullstackDevNumber + 1;
+    workerNum = workerNum + 1;
+    document.getElementById('fullstackDevNumber').innerHTML = fullstackDevNumber;
+    document.getElementById('workerNum').innerHTML = workerNum;
+    if(workerNum === maxWorkerNum){
+      var btn = document.getElementsByClassName("worker-btn");
+      for(var i = 0; i < btn.length; i++){
+      btn[i].disabled = true;
+      btn[i].innerHTML = "Upgrade Building";
+      };
+    };
+  } else {
+    console.log("You do not have enough money, earn some more and try again.");
+  };
+};
 
 // BUILDING UPGRADES
 
@@ -218,6 +297,12 @@ window.setInterval(function(){
   };
   if(webDeveloperNumber >= 1){
     incMoney(webDeveloperMoney * webDeveloperNumber);
+  };
+  if(seoSpecNumber >= 1){
+    incMoney(seoSpecMoney * seoSpecNumber);
+  };
+  if(uiuxDesNumber >= 1){
+    incMoney(uiuxDesMoney * uiuxDesNumber);
   };
   if(trainDeveloperActive === true){
     incMoney(trainDevelopersIncr);
