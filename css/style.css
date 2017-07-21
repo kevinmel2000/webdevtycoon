@@ -26,14 +26,7 @@ p{
   color: #615f5f;
 }
 
-/*MENU STYLES*/
-.top-menu{
-  background-color: #fff;
-  height: 10vh;
-  padding:0px;
-  margin: 0px;
-  border-bottom: 1px solid #bdc3c7;
-}
+
 .logo{
   padding: 0px;
   margin: 0px;
@@ -50,57 +43,19 @@ p{
 
 /*GAME CONTAINER*/
 .game-container{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: 90vh;
-}
-.game-left{
-  flex:1;
-  background-color: #fff;
   height: 100%;
-  border-right: 1px solid #bdc3c7;
 }
-.game-left-menu{
-  height: 10vh;
+@media only screen and (min-width : 768px){
+  .game-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100vh;
+  }
 }
-.game-left-menu ul{
-  margin: 0px;
-  padding: 0px;
-  background-color: #ecf0f1;
-  display: flex;
-  flex-direction: row;
-}
-.game-left-menu a:last-child{
-  border:none;
-}
-.game-left-menu a{
-  margin: 0px;
-  padding: 20px 0px;
-  list-style: none;
-  text-align: center;
-  width: 20%;
-  flex: 1;
-  font-size: 12px;
-  text-decoration: none;
-  color: #000;
-  border-right: 1px solid #bdc3c7;
-  background: #ffffff;
-  background: -webkit-linear-gradient(#ffffff 0%, #e2e2e2 100%);
-  background: -o-linear-gradient(#ffffff 0%, #e2e2e2 100%);
-  background: linear-gradient(#ffffff 0%, #e2e2e2 100%);
-}
-.game-left-menu a:hover{
-  background: #fff;
-}
-.active{
-  background: #fff !important;
-}
-.game-left-container{
-  padding:20px 0px;
-}
+
 #content0{
-  height: 77vh;
+  height: 85vh;
   overflow: auto;
   box-sizing: border-box;
   margin: 0px;
@@ -108,102 +63,85 @@ p{
 }
 #content1{
   display: none;
-    height: 77vh;
-    overflow: auto;
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px 10px;
-}
-#content2{
-  display: none;
-    height: 77vh;
-    overflow: auto;
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px 10px;
-}
-#content3{
-  display: none;
-    height: 77vh;
-    overflow: auto;
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px 10px;
-}
-#content4{
-  display: none;
-  height: 77vh;
+  height: 85vh;
   overflow: auto;
   box-sizing: border-box;
   margin: 0px;
   padding: 0px 10px;
 }
-.content-info{
-  margin-bottom:10px;
-}
-.game-right{
-  flex:1;
-  background-color: #f6f7f6;
+#content2{
+  display: none;
+  height: 85vh;
+  overflow: auto;
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px 10px;
 }
-.game-right-row{
-  display: flex;
-  flex-direction: row;
+#content3{
+  display: none;
+  height: 85vh;
+  overflow: auto;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px 10px;
 }
-.money-counter{
-  text-align: center;
-  border-bottom: 1px solid #bdc3c7;
-  padding: 10px 0;
+#content4{
+  display: none;
+  height: 85vh;
+  overflow: auto;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px 10px;
 }
-.date-counter{
-  text-align: center;
-  border-bottom: 1px solid #bdc3c7;
-  padding: 10px 0;
-}
-.money-counter h2{
-  display: inline;
-}
-.date-counter h2{
-  display: inline;
-  margin: 0px 10px;
-}
-.section{
-  flex: 1;
-  width: 50%;
-}
-.section img{
-  max-width: 100%;
-}
-.section h3{
-  padding: 5px 5px;
-  border-bottom: 1px solid #bdc3c7;
-}
-
-.inner-box{
+.content-box{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: flex-start;
+  float: left;
+
+}
+@media only screen and (min-width : 768px){
+
+}
+.content-info{
+  margin-bottom:10px;
+}
+
+
+.inner-box{
+  flex: 1;
   background: #f6f7f6;
   margin-bottom: 5px;
-  border: 1px solid #bdc3c7;
+  position: relative;
+  max-width: 300px;
+  min-width: 300px;
+  margin: 10px 10px;
+  float: left;
 }
 .inner-box-image{
-  flex:1;
   margin: 0px;
   padding: 0px;
 }
 .inner-box-image img{
   margin: 0px;
   padding: 0px;
-  height: 100%;
-  max-width: 140px;
+  width: 100%;
 }
 .inner-box-text{
-  flex:3;
   padding: 5px 10px;
+  border: 1px solid #bdc3c7;
+  height: 200px;
+  box-sizing: border-box;
 }
 .inner-box-button{
-  flex:1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #bdc3c7;
+  box-sizing: border-box;
 }
 .inner-button{
   height: 100%;
@@ -225,4 +163,92 @@ p{
 .inner-button:disabled{
   background: #fff;
   cursor:default;
+}
+
+/* RIGHT SIDE STYLES */
+.game-right{
+  flex:2;
+  background-color: #fff;
+  height: 100%;
+  max-width: 75%;
+  box-sizing: border-box;
+}
+@media only screen and (max-width : 768px){
+  .game-right{
+    max-width: 100%;
+  }
+}
+.game-right-container{
+  padding:20px 0px;
+}
+.game-right-menu{
+  height: 10vh;
+}
+.game-right-menu ul{
+  margin: 0px;
+  padding: 0px;
+  background-color: #ecf0f1;
+  display: flex;
+  flex-direction: row;
+}
+.game-right-menu a:last-child{
+  border:none;
+}
+.game-right-menu a{
+  margin: 0px;
+  padding: 20px 0px;
+  list-style: none;
+  text-align: center;
+  width: 20%;
+  flex: 1;
+  font-size: 12px;
+  text-decoration: none;
+  color: #000;
+  border-right: 1px solid #bdc3c7;
+  background: #ffffff;
+  background: -webkit-linear-gradient(#ffffff 0%, #e2e2e2 100%);
+  background: -o-linear-gradient(#ffffff 0%, #e2e2e2 100%);
+  background: linear-gradient(#ffffff 0%, #e2e2e2 100%);
+}
+.game-right-menu a:hover{
+  background: #fff;
+}
+.active{
+  background: #fff !important;
+}
+
+/* GAME LEFT STYLES */
+.game-left{
+  flex:1;
+  background-color: #fff;
+  height: 100%;
+  max-width: 25%;
+  border-right: 1px solid #bdc3c7;
+  box-sizing: border-box;
+}
+@media only screen and (max-width : 768px){
+  .game-left{
+    max-width: 100%;
+  }
+}
+.game-left h3{
+  padding: 5px 5px;
+  border-bottom: 1px solid #bdc3c7;
+}
+.money-counter{
+  text-align: center;
+  border-bottom: 1px solid #bdc3c7;
+  padding: 10px 0;
+}
+.date-counter{
+  text-align: center;
+  border-bottom: 1px solid #bdc3c7;
+  padding: 10px 0;
+}
+.money-counter h2{
+  display: inline;
+}
+.date-counter h2{
+  display: inline;
+  margin: 0px 10px;
 }

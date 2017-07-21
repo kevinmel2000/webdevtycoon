@@ -11,7 +11,6 @@ function incMoney(number){
 // First Job
 function jobOne(){
   jobOneBtn.disabled = true;
-
   setTimeout(function(jobOne){
     money = money + 100;
     document.getElementById('money').innerHTML = money;
