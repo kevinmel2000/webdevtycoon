@@ -32,14 +32,14 @@
         </div>
 
         <h3>Company Name: <span id="company-name">Random Name</span></h3>
-        <h3>Monthly Income: <span id="monthly-income">0</span></h3>
-        <h3>Monthly Outgoings: <span id="company-name">0</span></h3>
-        <h3>Workers: <span id="workerNum">0</span> / <span id="maxWorkerNum">0</span></h3>
+        <h3 id="income">Monthly Income: <span id="monthly-income">0</span></h3>
+        <h3 id="outgoings">Monthly Outgoings: <span id="company-name">0</span></h3>
+        <h2 class="left-heading">Employees <span id="workerNum">0</span> / <span id="maxWorkerNum">0</span></h2>
         <h3>Web Designers: <span id="webDesignerNumber">0</span></h3>
         <h3>SEO Specialists: <span id="seoSpecNumber">0</span></h3>
-        <h3>Fullstack Developers: <span id="fullstackDevNumber">0</span></h3>
         <h3>Web Developers: <span id="webDeveloperNumber">0</span></h3>
         <h3>UI/UX Designers: <span id="uiuxDesNumber">0</span></h3>
+        <h3>Fullstack Developers: <span id="fullstackDevNumber">0</span></h3>
 
 
         <button onclick="saveData()">Save Game</button>
@@ -72,11 +72,11 @@
 
             <div class="inner-box">
               <div class="inner-box-image">
-                <img src="http://placehold.it/130x130">
+                <img src="img/jobs/jobone.png">
               </div>
               <div class="inner-box-text">
-                <h3>Job One</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><strong>Takes 10 Seconds</strong></p>
+                <h3>Create A Landing Page</h3>
+                <p>A microbrewery has tasked you with creating a landing page for their new line of beer.<br><strong>Takes 10 Seconds</strong><br><strong>Earns &pound;100</strong></p>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" onclick="jobOne()" id="jobOneBtn">Do Job</button>
@@ -85,14 +85,40 @@
 
             <div class="inner-box">
               <div class="inner-box-image">
-                <img src="http://placehold.it/130x130">
+                <img src="img/jobs/jobtwo.png">
               </div>
               <div class="inner-box-text">
-                <h3>Job Two</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><strong>Takes 30 Seconds</strong></p>
+                <h3>Create A Booking Website</h3>
+                <p>A local hotel has asked you to redesign &amp; develop their new website to inform potential clients and allow them to book rooms.<br><strong>Takes 30 Seconds</strong><br><strong>Earns &pound;500</strong></p>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" onclick="jobTwo()" id="jobTwoBtn">Do Job</button>
+              </div>
+            </div>
+
+            <div class="inner-box">
+              <div class="inner-box-image">
+                <img src="img/jobs/jobthree.png">
+              </div>
+              <div class="inner-box-text">
+                <h3>Create An eCommerce Website</h3>
+                <p>A local jeweller wants to start selling their wares to a global audience and have asked you to set up a portal to do so.<br><strong>Takes 1 Minute</strong><br><strong>Earns &pound;1200</strong></p>
+              </div>
+              <div class="inner-box-button">
+                <button class="inner-button" onclick="jobThree()" id="jobThreeBtn">Do Job</button>
+              </div>
+            </div>
+
+            <div class="inner-box">
+              <div class="inner-box-image">
+                <img src="http://placehold.it/300x200">
+              </div>
+              <div class="inner-box-text">
+                <h3>Job Four</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><strong>Takes 2 Minutes</strong><br><strong>Earns &pound;2500</strong></p>
+              </div>
+              <div class="inner-box-button">
+                <button class="inner-button" onclick="jobFour()" id="jobFourBtn">Do Job</button>
               </div>
             </div>
 
@@ -103,7 +129,7 @@
 
           <div class="content-info">
             <h2>Hire Employees</h2>
-            <p>Purchase contracts to earn a monthly income, some contracts require certain workers / buildings &amp; equipment upgrades to purchase but may be more lucretive than contracts that don't.</p>
+            <p>Hire employees to build your empire, each employee earns a daily wage and takes a monthly wage.  Some contracts also require that you have a certain amount of certain employees.</p>
           </div>
 
           <div class="content-box">
@@ -114,8 +140,11 @@
               </div>
               <div class="inner-box-text">
                 <h3>Web Designer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <h3>Cost: <span id="webDesignerCost">0</span> / Earns <span id="webdesEarns">0</span> Per Day</h3>
+                <p><strong>Earns <span id="webdesEarns">0</span> Per Day</strong></p>
+                <p><strong>Costs <span id="webdesWage">0</span> Per Month</strong></p>
+                <center>
+                  <h3 class="cost">Cost: <span id="webDesignerCost">0</span></h3>
+                </center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button worker-btn" onclick="buyWebDesigner()">Hire</button>
@@ -128,8 +157,11 @@
               </div>
               <div class="inner-box-text">
                 <h3>Web Developer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <h3>Cost: <span id="webDeveloperCost">0</span> / Earns <span id="webdevEarns">0</span> Per Day</h3>
+                <p><strong>Earns <span id="webdevEarns">0</span> Per Day</strong></p>
+                <p><strong>Costs <span id="webdevWage">0</span> Per Month</strong></p>
+                <center>
+                  <h3 class="cost">Cost: <span id="webDeveloperCost">0</span></h3>
+                </center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button worker-btn" onclick="buyWebDeveloper()">Hire</button>
@@ -142,8 +174,11 @@
               </div>
               <div class="inner-box-text">
                 <h3>SEO Specialist</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <h3>Cost: <span id="seoSpecCost">0</span> / Earns <span id="seoEarns">0</span> Per Day</h3>
+                <p><strong>Earns <span id="seoEarns">0</span> Per Day</strong></p>
+                <p><strong>Costs <span id="seoWage">0</span> Per Month</strong></p>
+                <center>
+                  <h3 class="cost">Cost: <span id="seoSpecCost">0</span></h3>
+                </center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button worker-btn" onclick="buySeoSpec()">Hire</button>
@@ -156,8 +191,11 @@
               </div>
               <div class="inner-box-text">
                 <h3>UI/UX Designer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <h3>Cost: <span id="uiuxDesCost">0</span> / Earns <span id="uiuxEarns">0</span> Per Day</h3>
+                <p><strong>Earns <span id="uiuxEarns">0</span> Per Day</strong></p>
+                <p><strong>Costs <span id="uiuxWage">0</span> Per Month</strong></p>
+                <center>
+                  <h3 class="cost">Cost: <span id="uiuxDesCost">0</span></h3>
+                </center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button worker-btn" onclick="buyUiuxDes()">Hire</button>
@@ -170,8 +208,11 @@
               </div>
               <div class="inner-box-text">
                 <h3>Fullstack Developer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <h3>Cost: <span id="fullstackDevCost">0</span> / Earns <span id="fullstackEarns">0</span> Per Day</h3>
+                <p><strong>Earns <span id="fullstackEarns">0</span> Per Day</strong></p>
+                <p><strong>Costs <span id="fullstackWage">0</span> Per Month</strong></p>
+                <center>
+                  <h3 class="cost">Cost: <span id="fullstackDevCost">0</span></h3>
+                </center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button worker-btn" onclick="buyFullstackDev()">Hire</button>
@@ -192,11 +233,14 @@
 
             <div class="inner-box">
               <div class="inner-box-image">
-                <img src="http://placehold.it/130x130">
+                <img src="img/buildings/buildingone.png">
               </div>
               <div class="inner-box-text">
-                <h3>Building One</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3>Someones Large Shed</h3>
+                <center>
+                  <h3 class="cost">Cost: &pound;<span id="buildingOnePrice">0</span></h3>
+                  <h3 class="cost">Rent: &pound;<span id="buildingOneRental">0</span> Per Year</h3>
+                </center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" onclick="buildingUpgradeOne()" id="buildingUpgradeOneBtn">Buy</button>
@@ -205,14 +249,49 @@
 
             <div class="inner-box">
               <div class="inner-box-image">
-                <img src="http://placehold.it/130x130">
+                <img src="img/buildings/buildingtwo.png">
               </div>
               <div class="inner-box-text">
-                <h3>Building Two</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3>An Office House</h3>
+                <center>
+                  <h3 class="cost">Cost: &pound;<span id="buildingTwoPrice">0</span></h3>
+                  <h3 class="cost">Rent: &pound;<span id="buildingTwoRental">0</span> Per Year</h3>
+                </center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" onclick="buildingUpgradeTwo()" id="buildingUpgradeTwoBtn">Buy</button>
+              </div>
+            </div>
+
+            <div class="inner-box">
+              <div class="inner-box-image">
+                <img src="http://placehold.it/300x200">
+              </div>
+              <div class="inner-box-text">
+                <h3>An Office Block</h3>
+                <center>
+                  <h3 class="cost">Cost: &pound;<span id="buildingThreePrice">0</span></h3>
+                  <h3 class="cost">Rent: &pound;<span id="buildingThreeRental">0</span> Per Year</h3>
+                </center>
+              </div>
+              <div class="inner-box-button">
+                <button class="inner-button" onclick="buildingUpgradeThree()" id="buildingUpgradeThreeBtn">Buy</button>
+              </div>
+            </div>
+
+            <div class="inner-box">
+              <div class="inner-box-image">
+                <img src="http://placehold.it/300x200">
+              </div>
+              <div class="inner-box-text">
+                <h3>A Road</h3>
+                <center>
+                  <h3 class="cost">Cost: &pound;<span id="buildingFourPrice">0</span></h3>
+                  <h3 class="cost">Rent: &pound;<span id="buildingFourRental">0</span> Per Year</h3>
+                </center>
+              </div>
+              <div class="inner-box-button">
+                <button class="inner-button" onclick="buildingUpgradeFour()" id="buildingUpgradeFourBtn">Buy</button>
               </div>
             </div>
 
@@ -273,7 +352,7 @@
 
             <div class="inner-box">
               <div class="inner-box-image">
-                <img src="http://placehold.it/130x130">
+                <img src="http://placehold.it/300x200">
               </div>
               <div class="inner-box-text">
                 <h3>Contract One</h3>

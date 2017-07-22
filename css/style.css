@@ -99,13 +99,14 @@ p{
   flex-wrap: wrap;
   align-items: flex-start;
   float: left;
-
+  justify-content: space-around;
 }
 @media only screen and (min-width : 768px){
 
 }
 .content-info{
   margin-bottom:10px;
+  text-align: center;
 }
 
 
@@ -133,6 +134,9 @@ p{
   border: 1px solid #bdc3c7;
   height: 200px;
   box-sizing: border-box;
+}
+.inner-box-text .cost{
+  margin: 20px 0;
 }
 .inner-box-button{
   position: absolute;
@@ -202,6 +206,7 @@ p{
   width: 20%;
   flex: 1;
   font-size: 12px;
+  font-family: 'Raleway' sans-serif;
   text-decoration: none;
   color: #000;
   border-right: 1px solid #bdc3c7;
@@ -245,10 +250,23 @@ p{
   border-bottom: 1px solid #bdc3c7;
   padding: 10px 0;
 }
+#income{
+  color: #27ae60;
+}
+#outgoings{
+  color: #c0392b;
+}
 .money-counter h2{
   display: inline;
 }
 .date-counter h2{
   display: inline;
   margin: 0px 10px;
+}
+.left-heading{
+  padding: 5px;
+  margin: 15px 0px 5px 0px;
+  width: 100%;
+  background-color: #f6f7f6;
+  box-sizing: border-box;
 }

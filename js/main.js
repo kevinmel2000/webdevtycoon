@@ -1,8 +1,12 @@
 
-// Increase money
+// Increase/Decrease money
 var money = 0;
 function incMoney(number){
   money = money + number;
+  document.getElementById("money").innerHTML = money;
+};
+function decMoney(number){
+  money = money - number;
   document.getElementById("money").innerHTML = money;
 };
 
@@ -22,10 +26,30 @@ function jobOne(){
 function jobTwo(){
   jobTwoBtn.disabled = true;
   setTimeout(function(jobTwo){
-    money = money + 1000;
+    money = money + 500;
     document.getElementById('money').innerHTML = money;
     jobTwoBtn.disabled = false;
   }, 30000);
+};
+
+// Third Job
+function jobThree(){
+  jobThreeBtn.disabled = true;
+  setTimeout(function(jobThree){
+    money = money + 1200;
+    document.getElementById('money').innerHTML = money;
+    jobThreeBtn.disabled = false;
+  }, 60000);
+};
+
+// Fourth Job
+function jobFour(){
+  jobFourBtn.disabled = true;
+  setTimeout(function(jobFour){
+    money = money + 2500;
+    document.getElementById('money').innerHTML = money;
+    jobFourBtn.disabled = false;
+  }, 120000);
 };
 
 
@@ -38,7 +62,9 @@ var maxWorkerNum = 4;
 // Web Designer
 var webDesignerNumber = 0;
 const webDesignerCost = 100;
-const webDesignerMoney = 5;
+const webDesignerMoney = 10;
+const webDesignerWage = 200;
+document.getElementById('webdesWage').innerHTML = "£" + webDesignerWage;
 document.getElementById('webdesEarns').innerHTML = "£" + webDesignerMoney;
 document.getElementById('webDesignerCost').innerHTML = "£" + webDesignerCost;
 function buyWebDesigner(){
@@ -62,8 +88,10 @@ function buyWebDesigner(){
 
 // Web Developer
 var webDeveloperNumber = 0;
-const webDeveloperCost = 150;
-const webDeveloperMoney = 7;
+const webDeveloperCost = 200;
+const webDeveloperMoney = 15;
+const webDeveloperWage = 300;
+document.getElementById('webdevWage').innerHTML = "£" + webDeveloperWage;
 document.getElementById('webdevEarns').innerHTML = "£" + webDeveloperMoney;
 document.getElementById('webDeveloperCost').innerHTML = "£" + webDeveloperCost;
 function buyWebDeveloper(){
@@ -87,8 +115,10 @@ function buyWebDeveloper(){
 
 // SEO Specialist
 var seoSpecNumber = 0;
-const seoSpecCost = 150;
-const seoSpecMoney = 7;
+const seoSpecCost = 400;
+const seoSpecMoney = 20;
+const seoSpecWage = 400;
+document.getElementById('seoWage').innerHTML = "£" + seoSpecWage;
 document.getElementById('seoEarns').innerHTML = "£" + seoSpecMoney;
 document.getElementById('seoSpecCost').innerHTML = "£" + seoSpecCost;
 function buySeoSpec(){
@@ -112,8 +142,10 @@ function buySeoSpec(){
 
 // UI/UX Designer
 var uiuxDesNumber = 0;
-const uiuxDesCost = 150;
-const uiuxDesMoney = 7;
+const uiuxDesCost = 600;
+const uiuxDesMoney = 25;
+const uiuxDesWage = 500;
+document.getElementById('uiuxWage').innerHTML = "£" + uiuxDesWage;
 document.getElementById('uiuxEarns').innerHTML = "£" + uiuxDesMoney;
 document.getElementById('uiuxDesCost').innerHTML = "£" + uiuxDesCost;
 function buyUiuxDes(){
@@ -137,10 +169,12 @@ function buyUiuxDes(){
 
 // Fullstack Developer
 var fullstackDevNumber = 0;
-const fullstackDevCost = 150;
-const fullstackDevMoney = 7;
+const fullstackDevCost = 750;
+const fullstackDevMoney = 30;
+const fullstackDevWage = 600;
+document.getElementById('fullstackWage').innerHTML = "£" + fullstackDevWage;
 document.getElementById('fullstackEarns').innerHTML = "£" + fullstackDevMoney;
-document.getElementById('fullstackDevCost').innerHTML = "£" + uiuxDesCost;
+document.getElementById('fullstackDevCost').innerHTML = "£" + fullstackDevCost;
 function buyFullstackDev(){
   if(money >= uiuxDesCost){
     money = money - fullstackDevCost;
@@ -164,8 +198,11 @@ function buyFullstackDev(){
 
 // Building upgrade one
 
+const buildingOneRent = 500;
+const buildingOneCost = 250;
+document.getElementById('buildingOnePrice').innerHTML = buildingOneCost;
+document.getElementById('buildingOneRental').innerHTML = buildingOneRent;
 function buildingUpgradeOne(){
-const buildingOneCost = 100;
   if(money >= buildingOneCost){
       money = money - buildingOneCost;
       maxWorkerNum = maxWorkerNum + 10;
@@ -186,9 +223,11 @@ const buildingOneCost = 100;
 };
 
 // Building upgrade two
-
+  const buildingTwoRent = 3000;
+  const buildingTwoCost = 1500;
+  document.getElementById('buildingTwoPrice').innerHTML = buildingTwoCost;
+  document.getElementById('buildingTwoRental').innerHTML = buildingTwoRent;
 function buildingUpgradeTwo(){
-  const buildingTwoCost = 100;
     if(money >= buildingTwoCost){
         money = money - buildingTwoCost;
         maxWorkerNum = maxWorkerNum + 10;
@@ -207,6 +246,56 @@ function buildingUpgradeTwo(){
       console.log("You do not have enough money, earn some more and try again.");
     };
   };
+
+  // Building upgrade three
+  const buildingThreeRent = 8000;
+  const buildingThreeCost = 4000;
+  document.getElementById('buildingThreePrice').innerHTML = buildingThreeCost;
+  document.getElementById('buildingThreeRental').innerHTML = buildingThreeRent;
+  function buildingUpgradeThree(){
+      if(money >= buildingThreeCost){
+          money = money - buildingThreeCost;
+          maxWorkerNum = maxWorkerNum + 10;
+          document.getElementById('money').innerHTML = money;
+          document.getElementById('maxWorkerNum').innerHTML = maxWorkerNum;
+          document.getElementById('buildingUpgradeThreeBtn').disabled = true;
+          document.getElementById('buildingUpgradeThreeBtn').innerHTML = "Owned";
+          if(workerNum < maxWorkerNum){
+            var btn = document.getElementsByClassName("worker-btn");
+            for(var i = 0; i < btn.length; i++){
+            btn[i].disabled = false;
+            btn[i].innerHTML = "Hire";
+            };
+          };
+      } else {
+        console.log("You do not have enough money, earn some more and try again.");
+      };
+    };
+
+    // Building upgrade three
+    const buildingFourRent = 17000;
+    const buildingFourCost = 8500;
+    document.getElementById('buildingFourPrice').innerHTML = buildingFourCost;
+    document.getElementById('buildingFourRental').innerHTML = buildingFourRent;
+    function buildingUpgradeFour(){
+        if(money >= buildingFourCost){
+            money = money - buildingFourCost;
+            maxWorkerNum = maxWorkerNum + 10;
+            document.getElementById('money').innerHTML = money;
+            document.getElementById('maxWorkerNum').innerHTML = maxWorkerNum;
+            document.getElementById('buildingUpgradeFourBtn').disabled = true;
+            document.getElementById('buildingUpgradeFourBtn').innerHTML = "Owned";
+            if(workerNum < maxWorkerNum){
+              var btn = document.getElementsByClassName("worker-btn");
+              for(var i = 0; i < btn.length; i++){
+              btn[i].disabled = false;
+              btn[i].innerHTML = "Hire";
+              };
+            };
+        } else {
+          console.log("You do not have enough money, earn some more and try again.");
+        };
+      };
 
 // Display worker number and max worker number
 document.getElementById('maxWorkerNum').innerHTML = maxWorkerNum;
@@ -287,7 +376,7 @@ function trainDesigners(){
 
 
 
-// INCREASE MONEY
+// INCREASE / DECREASE MONEY
 
 // Per Day
 window.setInterval(function(){
@@ -303,6 +392,10 @@ window.setInterval(function(){
   if(uiuxDesNumber >= 1){
     incMoney(uiuxDesMoney * uiuxDesNumber);
   };
+  if(fullstackDevNumber >= 1){
+    incMoney(fullstackDevMoney * fullstackDevNumber);
+  };
+
   if(trainDeveloperActive === true){
     incMoney(trainDevelopersIncr);
   };
@@ -313,6 +406,21 @@ window.setInterval(function(){
   if(contractOneState >= 1){
     var contractOneIncome = 1000;
     incMoney(contractOneIncome);
+  };
+  if(webDesignerNumber >= 1){
+    decMoney(webDesignerWage * webDesignerNumber);
+  };
+  if(webDeveloperNumber >= 1){
+    decMoney(webDeveloperWage * webDeveloperNumber);
+  };
+  if(seoSpecNumber >= 1){
+    decMoney(seoSpecWage * seoSpecNumber);
+  };
+  if(uiuxDesNumber >= 1){
+    decMoney(uiuxDesWage * uiuxDesNumber);
+  };
+  if(fullstackDevNumber >= 1){
+    decMoney(fullstackDevWage * fullstackDevNumber);
   };
 }, 31000);
 
@@ -327,15 +435,21 @@ var year = 0;
 window.setInterval(function() {
   day = day + 1;
   document.getElementById("day").innerHTML = day;
-  if(day >= 31){
+}, 1000);
+
+window.setInterval(function() {
+  if(day == 31){
     day = 0;
     month = month + 1;
     document.getElementById("month").innerHTML = month;
-    if(month >= 12 && day >= 31){
-      month = 0;
-      year = year + 1;
-      document.getElementById("year").innerHTML = year;
-    };
+  };
+}, 1000);
+
+window.setInterval(function() {
+  if(month >= 12 && day >= 31){
+    month = 0;
+    year = year + 1;
+    document.getElementById("year").innerHTML = year;
   };
 }, 1000);
 
