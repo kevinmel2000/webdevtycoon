@@ -200,12 +200,14 @@ function buyFullstackDev(){
 
 const buildingOneRent = 500;
 const buildingOneCost = 250;
+var buildingOneState = false;
 document.getElementById('buildingOnePrice').innerHTML = buildingOneCost;
 document.getElementById('buildingOneRental').innerHTML = buildingOneRent;
 function buildingUpgradeOne(){
   if(money >= buildingOneCost){
       money = money - buildingOneCost;
       maxWorkerNum = maxWorkerNum + 10;
+      buildingOneState = true;
       document.getElementById('money').innerHTML = money;
       document.getElementById('maxWorkerNum').innerHTML = maxWorkerNum;
       document.getElementById('buildingUpgradeOneBtn').disabled = true;
@@ -225,12 +227,14 @@ function buildingUpgradeOne(){
 // Building upgrade two
   const buildingTwoRent = 3000;
   const buildingTwoCost = 1500;
+  var buildingTwoState = false;
   document.getElementById('buildingTwoPrice').innerHTML = buildingTwoCost;
   document.getElementById('buildingTwoRental').innerHTML = buildingTwoRent;
 function buildingUpgradeTwo(){
     if(money >= buildingTwoCost){
         money = money - buildingTwoCost;
         maxWorkerNum = maxWorkerNum + 10;
+        var buildingTwoState = true;
         document.getElementById('money').innerHTML = money;
         document.getElementById('maxWorkerNum').innerHTML = maxWorkerNum;
         document.getElementById('buildingUpgradeTwoBtn').disabled = true;
@@ -250,12 +254,14 @@ function buildingUpgradeTwo(){
   // Building upgrade three
   const buildingThreeRent = 8000;
   const buildingThreeCost = 4000;
+  var buildingThreeState = false;
   document.getElementById('buildingThreePrice').innerHTML = buildingThreeCost;
   document.getElementById('buildingThreeRental').innerHTML = buildingThreeRent;
   function buildingUpgradeThree(){
       if(money >= buildingThreeCost){
           money = money - buildingThreeCost;
           maxWorkerNum = maxWorkerNum + 10;
+          var buildingThreeState = true;
           document.getElementById('money').innerHTML = money;
           document.getElementById('maxWorkerNum').innerHTML = maxWorkerNum;
           document.getElementById('buildingUpgradeThreeBtn').disabled = true;
@@ -272,15 +278,17 @@ function buildingUpgradeTwo(){
       };
     };
 
-    // Building upgrade three
+    // Building upgrade four
     const buildingFourRent = 17000;
     const buildingFourCost = 8500;
+    var buildingFourState = false;
     document.getElementById('buildingFourPrice').innerHTML = buildingFourCost;
     document.getElementById('buildingFourRental').innerHTML = buildingFourRent;
     function buildingUpgradeFour(){
         if(money >= buildingFourCost){
             money = money - buildingFourCost;
             maxWorkerNum = maxWorkerNum + 10;
+            var buildingFourState = false;
             document.getElementById('money').innerHTML = money;
             document.getElementById('maxWorkerNum').innerHTML = maxWorkerNum;
             document.getElementById('buildingUpgradeFourBtn').disabled = true;
@@ -374,12 +382,66 @@ function trainDesigners(){
   };
 };
 
+// Train SEO
+var seoSpecNumber = seoSpecNumber;
+var upgradeIncr = 20;
+var trainSeoIncr = 0;
+var trainSeoActive = false;
+const trainSeoCost = 500;
+document.getElementById('trainSeoCost').innerHTML = "£" + trainSeoCost;
+document.getElementById('trainSeoMoneyIncr').innerHTML = "£" + upgradeIncr + " Per Month Per Specialist";
+function trainSeo(){
+  if(seoSpecNumber >= 1 && money >= trainSeoCost){
+    money = money - trainSeoCost;
+    trainSeoIncr = upgradeIncr * seoSpecNumber;
+    trainSeoActive = true;
+    document.getElementById('trainSeoBtn').disabled = true;
+    document.getElementById('trainSeoBtn').innerHTML = "Upgraded";
+  }
+  else if(seoSpecNumber < 1) {
+    console.log("Hire some SEO Specialists then try training them");
+  }
+  else if(money < trainSeoCost){
+    console.log("You dont have enough money, earn some more and try again.");
+  };
+};
+
+// Train UIUX
+var uiuxDesNumber = uiuxDesNumber;
+var upgradeIncr = 20;
+var trainUiuxIncr = 0;
+var trainUiuxActive = false;
+const trainUiuxCost = 500;
+document.getElementById('trainUiuxCost').innerHTML = "£" + trainUiuxCost;
+document.getElementById('trainUiuxMoneyIncr').innerHTML = "£" + upgradeIncr + " Per Month Per Designer";
+function trainUiux(){
+  if(uiuxDesNumber >= 1 && money >= trainUiuxCost){
+    money = money - trainUiuxCost;
+    trainUiuxIncr = upgradeIncr * uiuxDesNumber;
+    trainUiuxActive = true;
+    document.getElementById('trainUiuxBtn').disabled = true;
+    document.getElementById('trainUiuxBtn').innerHTML = "Upgraded";
+  }
+  else if(uiuxDesNumber < 1) {
+    console.log("Hire some SEO Specialists then try training them");
+  }
+  else if(money < trainUiuxCost){
+    console.log("You dont have enough money, earn some more and try again.");
+  };
+};
+
 
 
 // INCREASE / DECREASE MONEY
-
+var day = 0;
+var month = 0;
+var year = 0;
 // Per Day
 window.setInterval(function(){
+
+  day = day + 1;
+  document.getElementById("day").innerHTML = day;
+
   if(webDesignerNumber >= 1){
     incMoney(webDesignerMoney * webDesignerNumber);
   };
@@ -395,7 +457,6 @@ window.setInterval(function(){
   if(fullstackDevNumber >= 1){
     incMoney(fullstackDevMoney * fullstackDevNumber);
   };
-
   if(trainDeveloperActive === true){
     incMoney(trainDevelopersIncr);
   };
@@ -403,6 +464,12 @@ window.setInterval(function(){
 
 // Per Month
 window.setInterval(function(){
+
+  day = 0;
+  month = month + 1;
+  document.getElementById("day").innerHTML = day;
+  document.getElementById("month").innerHTML = month;
+
   if(contractOneState >= 1){
     var contractOneIncome = 1000;
     incMoney(contractOneIncome);
@@ -424,35 +491,27 @@ window.setInterval(function(){
   };
 }, 31000);
 
+// Per Year
+window.setInterval(function(){
 
+  month = 0;
+  year = year + 1;
+  document.getElementById("month").innerHTML = month;
+  document.getElementById("year").innerHTML = year;
 
-// Increase amount of days / months / years
-
-var day = 0;
-var month = 0;
-var year = 0;
-
-window.setInterval(function() {
-  day = day + 1;
-  document.getElementById("day").innerHTML = day;
-}, 1000);
-
-window.setInterval(function() {
-  if(day == 31){
-    day = 0;
-    month = month + 1;
-    document.getElementById("month").innerHTML = month;
+  if(buildingOneState === true){
+    decMoney(buildingOneRent)
   };
-}, 1000);
-
-window.setInterval(function() {
-  if(month >= 12 && day >= 31){
-    month = 0;
-    year = year + 1;
-    document.getElementById("year").innerHTML = year;
+  if(buildingTwoState === true){
+    decMoney(buildingTwoRent)
   };
-}, 1000);
-
+  if(buildingThreeState === true){
+    decMoney(buildingThreeRent)
+  };
+  if(buildingFourState === true){
+    decMoney(buildingFourRent)
+  };
+}, 403000);
 
 
 // Left-Game Display Functions
@@ -496,3 +555,72 @@ window.setInterval(function() {
     $('#btn0, #btn2, #btn3, #btn1').removeClass("active");
      return false;
   });
+
+// SAVE GAME
+
+function saveGame(){
+  var gameData = {
+    day: day,
+    month: month,
+    year: year,
+    money: money,
+    workerNum: workerNum,
+    maxWorkerNum: maxWorkerNum,
+    webDesignerNumber: webDesignerNumber,
+    webDeveloperNumber: webDeveloperNumber,
+    seoSpecNumber: seoSpecNumber,
+    uiuxDesNumber: uiuxDesNumber,
+    fullstackDevNumber: fullstackDevNumber,
+    buildingOneState: buildingOneState,
+    buildingTwoState: buildingTwoState,
+    buildingThreeState: buildingThreeState,
+    buildingFourState: buildingFourState,
+    contractOneState: contractOneState,
+    trainDeveloperActive: trainDeveloperActive,
+    trainDesignersActive: trainDesignersActive
+  };
+  console.log(gameData);
+  localStorage.setItem("gameData", JSON.stringify(gameData));
+};
+
+
+// LOAD GAME
+
+function loadGame(){
+  var loadGameData = JSON.parse(localStorage.getItem('gameData'))
+  day = loadGameData.day;
+  month = loadGameData.month;
+  year = loadGameData.year;
+  money = loadGameData.money;
+  workerNum = loadGameData.workerNum;
+  maxWorkerNum = loadGameData.maxWorkerNum;
+  webDesignerNumber = loadGameData.webDesignerNumber;
+  webDeveloperNumber = loadGameData.webDeveloperNumber;
+  seoSpecNumber = loadGameData.seoSpecNumber;
+  uiuxDesNumber = loadGameData.uiuxDesNumber;
+  fullstackDevNumber = loadGameData.fullstackDevNumber;
+  buildingOneState = loadGameData.buildingOneState;
+  buildingTwoState = loadGameData.buildingTwoState;
+  buildingThreeState = loadGameData.buildingThreeState;
+  buildingFourState = loadGameData.buildingFourState;
+  contractOneState = loadGameData.contractOneState;
+  trainDeveloperActive = loadGameData.trainDeveloperActive;
+  trainDesignersActive = loadGameData.trainDesignersActive;
+
+  document.getElementById("day").innerHTML = day;
+  document.getElementById("month").innerHTML = month;
+  document.getElementById("year").innerHTML = year;
+  document.getElementById("money").innerHTML = money;
+  document.getElementById("workerNum").innerHTML = workerNum;
+  document.getElementById("maxWorkerNum").innerHTML = maxWorkerNum;
+  document.getElementById("webDesignerNumber").innerHTML = webDesignerNumber;
+  document.getElementById("webDeveloperNumber").innerHTML = webDeveloperNumber;
+  document.getElementById("seoSpecNumber").innerHTML = seoSpecNumber;
+  document.getElementById("uiuxDesNumber").innerHTML = uiuxDesNumber;
+  document.getElementById("fullstackDevNumber").innerHTML = fullstackDevNumber;
+};
+function restart(){
+  localStorage.removeItem("gameData");
+  location.reload();
+}
+window.onload = loadGame();

@@ -42,7 +42,8 @@
         <h3>Fullstack Developers: <span id="fullstackDevNumber">0</span></h3>
 
 
-        <button onclick="saveData()">Save Game</button>
+        <button onclick="saveGame()">Save Game</button>
+        <button onclick="restart()">Restart Game</button>
 
     </div><!--Game-left finish-->
 
@@ -76,7 +77,8 @@
               </div>
               <div class="inner-box-text">
                 <h3>Create A Landing Page</h3>
-                <p>A microbrewery has tasked you with creating a landing page for their new line of beer.<br><strong>Takes 10 Seconds</strong><br><strong>Earns &pound;100</strong></p>
+                <p>A microbrewery has tasked you with creating a landing page for their new line of beer.<br><strong>Takes 10 Seconds</strong><br></p>
+                  <center><h3>Earns &pound;100</h3></center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" onclick="jobOne()" id="jobOneBtn">Do Job</button>
@@ -89,7 +91,7 @@
               </div>
               <div class="inner-box-text">
                 <h3>Create A Booking Website</h3>
-                <p>A local hotel has asked you to redesign &amp; develop their new website to inform potential clients and allow them to book rooms.<br><strong>Takes 30 Seconds</strong><br><strong>Earns &pound;500</strong></p>
+                <p>A local hotel has asked you to redesign &amp; develop their new website to inform potential clients and allow them to book rooms.<br><strong>Takes 30 Seconds</strong></p><center><h3>Earns &pound;500</h3></center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" onclick="jobTwo()" id="jobTwoBtn">Do Job</button>
@@ -102,7 +104,7 @@
               </div>
               <div class="inner-box-text">
                 <h3>Create An eCommerce Website</h3>
-                <p>A local jeweller wants to start selling their wares to a global audience and have asked you to set up a portal to do so.<br><strong>Takes 1 Minute</strong><br><strong>Earns &pound;1200</strong></p>
+                <p>A local jeweller wants to start selling their wares to a global audience and have asked you to set up a portal to do so.<br><strong>Takes 1 Minute</strong></p><center><h3>Earns &pound;1200</h3></center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" onclick="jobThree()" id="jobThreeBtn">Do Job</button>
@@ -115,7 +117,7 @@
               </div>
               <div class="inner-box-text">
                 <h3>Job Four</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><strong>Takes 2 Minutes</strong><br><strong>Earns &pound;2500</strong></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><strong>Takes 2 Minutes</strong></p><center><h3>Earns &pound;2500</h3></center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" onclick="jobFour()" id="jobFourBtn">Do Job</button>
@@ -265,7 +267,7 @@
 
             <div class="inner-box">
               <div class="inner-box-image">
-                <img src="http://placehold.it/300x200">
+                <img src="img/buildings/buildingthree.png">
               </div>
               <div class="inner-box-text">
                 <h3>An Office Block</h3>
@@ -281,10 +283,10 @@
 
             <div class="inner-box">
               <div class="inner-box-image">
-                <img src="http://placehold.it/300x200">
+                <img src="img/buildings/buildingfour.png">
               </div>
               <div class="inner-box-text">
-                <h3>A Road</h3>
+                <h3>A Mansion</h3>
                 <center>
                   <h3 class="cost">Cost: &pound;<span id="buildingFourPrice">0</span></h3>
                   <h3 class="cost">Rent: &pound;<span id="buildingFourRental">0</span> Per Year</h3>
@@ -335,6 +337,36 @@
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" id="trainDevsBtn" onclick="trainDevelopers()">Train Developers</button>
+              </div>
+            </div>
+
+            <div class="inner-box">
+              <div class="inner-box-image">
+                <img src="img/upgrades/seo.png">
+              </div>
+              <div class="inner-box-text">
+                <h3>Train Your SEO Specialists</h3>
+                <p>Send your web developers on a training course to teach them new languages and frameworks.<br></p>
+                <h3>Cost: <span id="trainSeoCost">0</span></h3>
+                <h3>Money Increase: <span id="trainSeoMoneyIncr">0</span></h3>
+              </div>
+              <div class="inner-box-button">
+                <button class="inner-button" id="trainSeoBtn" onclick="trainSeo()">Train SEO Specialists</button>
+              </div>
+            </div>
+
+            <div class="inner-box">
+              <div class="inner-box-image">
+                <img src="img/upgrades/uiux.png">
+              </div>
+              <div class="inner-box-text">
+                <h3>Train Your UI / UX Designers</h3>
+                <p>Send your web developers on a training course to teach them new languages and frameworks.<br></p>
+                <h3>Cost: <span id="trainUiuxCost">0</span></h3>
+                <h3>Money Increase: <span id="trainUiuxMoneyIncr">0</span></h3>
+              </div>
+              <div class="inner-box-button">
+                <button class="inner-button" id="trainUiuxBtn" onclick="trainUiux()">Train UI / UX Designers</button>
               </div>
             </div>
 
