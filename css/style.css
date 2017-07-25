@@ -147,6 +147,7 @@ p{
   border: 1px solid #bdc3c7;
   box-sizing: border-box;
 }
+
 .inner-button{
   height: 100%;
   width: 100%;
@@ -155,7 +156,6 @@ p{
   color: #3e3e3e;
   cursor: pointer;
   border: none;
-  border-left: 1px solid #bdc3c7;
   background: #ffffff;
   background: -webkit-linear-gradient(#ffffff 0%, #e2e2e2 100%);
   background: -o-linear-gradient(#ffffff 0%, #e2e2e2 100%);
@@ -269,4 +269,21 @@ p{
   width: 100%;
   background-color: #f6f7f6;
   box-sizing: border-box;
+}
+.side-button{
+  width: 90%;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 20px;
+  color: #3e3e3e;
+  cursor: pointer;
+  border: 1px solid #bdc3c7;
+  background: #ffffff;
+  background: -webkit-linear-gradient(#ffffff 0%, #e2e2e2 100%);
+  background: -o-linear-gradient(#ffffff 0%, #e2e2e2 100%);
+  background: linear-gradient(#ffffff 0%, #e2e2e2 100%);
+  padding: 10px 0px;
+  margin: 10px 5%;
+}
+.side-button:hover{
+  background: #fff;
 }

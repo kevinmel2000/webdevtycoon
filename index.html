@@ -33,7 +33,6 @@
 
         <h3>Company Name: <span id="company-name">Random Name</span></h3>
         <h3 id="income">Monthly Income: <span id="monthly-income">0</span></h3>
-        <h3 id="outgoings">Monthly Outgoings: <span id="company-name">0</span></h3>
         <h2 class="left-heading">Employees <span id="workerNum">0</span> / <span id="maxWorkerNum">0</span></h2>
         <h3>Web Designers: <span id="webDesignerNumber">0</span></h3>
         <h3>SEO Specialists: <span id="seoSpecNumber">0</span></h3>
@@ -42,8 +41,8 @@
         <h3>Fullstack Developers: <span id="fullstackDevNumber">0</span></h3>
 
 
-        <button onclick="saveGame()">Save Game</button>
-        <button onclick="restart()">Restart Game</button>
+        <button class="side-button" onclick="saveGame()">Save Game</button>
+        <button class="side-button" onclick="restart()">Restart Game</button>
 
     </div><!--Game-left finish-->
 
@@ -66,7 +65,7 @@
 
           <div class="content-info">
             <h2>Do Jobs</h2>
-            <p>Purchase contracts to earn a monthly income, some contracts require certain workers / buildings &amp; equipment upgrades to purchase but may be more lucretive than contracts that don't.</p>
+            <p>You can do jobs to earn some extra money or money to start hiring your employees, each job takes a set amount of time and pays out once the timer is up.</p>
           </div>
 
           <div class="content-box">
@@ -131,7 +130,7 @@
 
           <div class="content-info">
             <h2>Hire Employees</h2>
-            <p>Hire employees to build your empire, each employee earns a daily wage and takes a monthly wage.  Some contracts also require that you have a certain amount of certain employees.</p>
+            <p>Hire employees to build your empire, each employee earns a daily amount and takes a monthly wage.  Some contracts also require that you have a certain amount of certain employees.</p>
           </div>
 
           <div class="content-box">
@@ -143,7 +142,7 @@
               <div class="inner-box-text">
                 <h3>Web Designer</h3>
                 <p><strong>Earns <span id="webdesEarns">0</span> Per Day</strong></p>
-                <p><strong>Costs <span id="webdesWage">0</span> Per Month</strong></p>
+                <p><strong>Wage <span id="webdesWage">0</span> Per Month</strong></p>
                 <center>
                   <h3 class="cost">Cost: <span id="webDesignerCost">0</span></h3>
                 </center>
@@ -160,7 +159,7 @@
               <div class="inner-box-text">
                 <h3>Web Developer</h3>
                 <p><strong>Earns <span id="webdevEarns">0</span> Per Day</strong></p>
-                <p><strong>Costs <span id="webdevWage">0</span> Per Month</strong></p>
+                <p><strong>Wage <span id="webdevWage">0</span> Per Month</strong></p>
                 <center>
                   <h3 class="cost">Cost: <span id="webDeveloperCost">0</span></h3>
                 </center>
@@ -177,7 +176,7 @@
               <div class="inner-box-text">
                 <h3>SEO Specialist</h3>
                 <p><strong>Earns <span id="seoEarns">0</span> Per Day</strong></p>
-                <p><strong>Costs <span id="seoWage">0</span> Per Month</strong></p>
+                <p><strong>Wage <span id="seoWage">0</span> Per Month</strong></p>
                 <center>
                   <h3 class="cost">Cost: <span id="seoSpecCost">0</span></h3>
                 </center>
@@ -194,7 +193,7 @@
               <div class="inner-box-text">
                 <h3>UI/UX Designer</h3>
                 <p><strong>Earns <span id="uiuxEarns">0</span> Per Day</strong></p>
-                <p><strong>Costs <span id="uiuxWage">0</span> Per Month</strong></p>
+                <p><strong>Wage <span id="uiuxWage">0</span> Per Month</strong></p>
                 <center>
                   <h3 class="cost">Cost: <span id="uiuxDesCost">0</span></h3>
                 </center>
@@ -211,7 +210,7 @@
               <div class="inner-box-text">
                 <h3>Fullstack Developer</h3>
                 <p><strong>Earns <span id="fullstackEarns">0</span> Per Day</strong></p>
-                <p><strong>Costs <span id="fullstackWage">0</span> Per Month</strong></p>
+                <p><strong>Wage <span id="fullstackWage">0</span> Per Month</strong></p>
                 <center>
                   <h3 class="cost">Cost: <span id="fullstackDevCost">0</span></h3>
                 </center>
@@ -228,7 +227,7 @@
 
           <div class="content-info">
             <h2>Upgrade Offices</h2>
-            <p>Purchase contracts to earn a monthly income, some contracts require certain workers / buildings &amp; equipment upgrades to purchase but may be more lucretive than contracts that don't.</p>
+            <p>Upgrade your building to be able to hire more employees, each building increases the amount of employees you can hire by 10.</p>
           </div>
 
           <div class="content-box">
@@ -309,16 +308,14 @@
 
           <div class="content-box">
 
-
             <div class="inner-box">
               <div class="inner-box-image">
                 <img src="img/upgrades/webdes.png">
               </div>
               <div class="inner-box-text">
                 <h3>Train Your Designers</h3>
-                <p>Send your web designers on a training course and boost their creativity into overdrive!<br></p>
-                <h3>Cost: <span id="trainDesCost">0</span></h3>
-                <h3>Money Increase: <span id="trainDesMoneyIncr">0</span></h3>
+                <p><strong>Cost: <span id="trainDesCost">0</span> Per Day</strong></p>
+                <p><strong>Money Increase: <span id="trainDesMoneyIncr">0</span></strong></p>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" id="trainDesBtn" onclick="trainDesigners()">Train Designers</button>
@@ -331,9 +328,8 @@
               </div>
               <div class="inner-box-text">
                 <h3>Train Your Developers</h3>
-                <p>Send your web developers on a training course to teach them new languages and frameworks.<br></p>
-                <h3>Cost: <span id="trainDevsCost">0</span></h3>
-                <h3>Money Increase: <span id="trainDevsMoneyIncr">0</span></h3>
+                <p><strong>Cost: <span id="trainDevsCost">0</span> Per Day</strong></p>
+                <p><strong>Money Increase: <span id="trainDevsMoneyIncr">0</span></strong></p>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" id="trainDevsBtn" onclick="trainDevelopers()">Train Developers</button>
@@ -346,9 +342,8 @@
               </div>
               <div class="inner-box-text">
                 <h3>Train Your SEO Specialists</h3>
-                <p>Send your web developers on a training course to teach them new languages and frameworks.<br></p>
-                <h3>Cost: <span id="trainSeoCost">0</span></h3>
-                <h3>Money Increase: <span id="trainSeoMoneyIncr">0</span></h3>
+                <p><strong>Cost: <span id="trainSeoCost">0</span> Per Day</strong></p>
+                <p><strong>Money Increase: <span id="trainSeoMoneyIncr">0</span></strong></p>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" id="trainSeoBtn" onclick="trainSeo()">Train SEO Specialists</button>
@@ -361,9 +356,8 @@
               </div>
               <div class="inner-box-text">
                 <h3>Train Your UI / UX Designers</h3>
-                <p>Send your web developers on a training course to teach them new languages and frameworks.<br></p>
-                <h3>Cost: <span id="trainUiuxCost">0</span></h3>
-                <h3>Money Increase: <span id="trainUiuxMoneyIncr">0</span></h3>
+                <p><strong>Cost: <span id="trainUiuxCost">0</span> Per Day</strong></p>
+                <p><strong>Money Increase: <span id="trainUiuxMoneyIncr">0</span></strong></p>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" id="trainUiuxBtn" onclick="trainUiux()">Train UI / UX Designers</button>
@@ -388,10 +382,70 @@
               </div>
               <div class="inner-box-text">
                 <h3>Contract One</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><span id="contractOne"> </span>
+                <p>No Requirements</p>
+                <center>
+                  <h3 class="cost">Cost: <span id="contractOneCost">0</span></h3>
+                </center>
               </div>
               <div class="inner-box-button">
                 <button class="inner-button" onclick="buyContractOne()" id="contractOneBtn">Buy</button>
+              </div>
+            </div>
+
+            <div class="inner-box">
+              <div class="inner-box-image">
+                <img src="http://placehold.it/300x200">
+              </div>
+              <div class="inner-box-text">
+                <h3>Contract Two</h3>
+                <p>Requirements:</p>
+                  <p><strong>1 x Web Designer</strong></p>
+                  <p><strong>1 x Web Developer</strong></p>
+                  <center>
+                    <h3 class="cost">Cost: <span id="contractTwoCost">0</span></h3>
+                  </center>
+              </div>
+              <div class="inner-box-button">
+                <button class="inner-button" onclick="buyContractTwo()" id="contractTwoBtn">Buy</button>
+              </div>
+            </div>
+
+            <div class="inner-box">
+              <div class="inner-box-image">
+                <img src="http://placehold.it/300x200">
+              </div>
+              <div class="inner-box-text">
+                <h3>Contract Three</h3>
+                <p>Requirements:</p>
+                  <p><strong>2 x Web Designer</strong></p>
+                  <p><strong>2 x Web Developer</strong></p>
+                  <p><strong>1 x SEO Specialist</strong></p>
+                  <center>
+                    <h3 class="cost">Cost: <span id="contractThreeCost">0</span></h3>
+                  </center>
+              </div>
+              <div class="inner-box-button">
+                <button class="inner-button" onclick="buyContractThree()" id="contractThreeBtn">Buy</button>
+              </div>
+            </div>
+
+            <div class="inner-box">
+              <div class="inner-box-image">
+                <img src="http://placehold.it/300x200">
+              </div>
+              <div class="inner-box-text">
+                <h3>Contract Four</h3>
+                <p>Requirements:</p>
+                  <p><strong>2 x Web Designer</strong></p>
+                  <p><strong>2 x Web Developer</strong></p>
+                  <p><strong>1 x SEO Specialist</strong></p>
+                  <p><strong>1 x UI / UX Designer</strong></p>
+                  <center>
+                    <h3 class="cost">Cost: <span id="contractFourCost">0</span></h3>
+                  </center>
+              </div>
+              <div class="inner-box-button">
+                <button class="inner-button" onclick="buyContractFour()" id="contractFourBtn">Buy</button>
               </div>
             </div>
 

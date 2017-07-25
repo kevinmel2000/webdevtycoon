@@ -82,7 +82,7 @@ function buyWebDesigner(){
       };
     };
   } else {
-    console.log("You do not have enough money, earn some more and try again.")
+    alert("You do not have enough money, earn some more and try again.")
   };
 };
 
@@ -109,7 +109,7 @@ function buyWebDeveloper(){
       };
     };
   } else {
-    console.log("You do not have enough money, earn some more and try again.");
+    alert("You do not have enough money, earn some more and try again.");
   };
 };
 
@@ -136,7 +136,7 @@ function buySeoSpec(){
       };
     };
   } else {
-    console.log("You do not have enough money, earn some more and try again.");
+    alert("You do not have enough money, earn some more and try again.");
   };
 };
 
@@ -163,7 +163,7 @@ function buyUiuxDes(){
       };
     };
   } else {
-    console.log("You do not have enough money, earn some more and try again.");
+    alert("You do not have enough money, earn some more and try again.");
   };
 };
 
@@ -190,7 +190,7 @@ function buyFullstackDev(){
       };
     };
   } else {
-    console.log("You do not have enough money, earn some more and try again.");
+    alert("You do not have enough money, earn some more and try again.");
   };
 };
 
@@ -220,7 +220,7 @@ function buildingUpgradeOne(){
         };
       };
   } else {
-    console.log("You do not have enough money, earn some more and try again.");
+    alert("You do not have enough money, earn some more and try again.");
   };
 };
 
@@ -247,7 +247,7 @@ function buildingUpgradeTwo(){
           };
         };
     } else {
-      console.log("You do not have enough money, earn some more and try again.");
+      alert("You do not have enough money, earn some more and try again.");
     };
   };
 
@@ -274,7 +274,7 @@ function buildingUpgradeTwo(){
             };
           };
       } else {
-        console.log("You do not have enough money, earn some more and try again.");
+        alert("You do not have enough money, earn some more and try again.");
       };
     };
 
@@ -301,7 +301,7 @@ function buildingUpgradeTwo(){
               };
             };
         } else {
-          console.log("You do not have enough money, earn some more and try again.");
+          alert("You do not have enough money, earn some more and try again.");
         };
       };
 
@@ -314,20 +314,101 @@ document.getElementById('workerNum').innerHTML = workerNum;
 
 // Contract One
 var contractOne = " ";
-var contractOneState = 0;
-
+var contractOneState = false;
+const contractOneIncome = 500;
+const contractOneCost = 250;
+document.getElementById('contractOneCost').innerHTML = "£" + contractOneCost;
 function buyContractOne(){
-  const contractOneCost = 250;
   if(money >= contractOneCost){
     contractOne = "Contract Owned";
-    contractOneState = 1;
+    contractOneState = true;
     money = money - contractOneCost;
     document.getElementById('contractOne').innerHTML = contractOne;
     document.getElementById('money').innerHTML = money;
   };
-  if(contractOneState >= 1){
+  if(contractOneState === true){
     document.getElementById('contractOneBtn').disabled = true;
     document.getElementById('contractOneBtn').innerHTML = contractOne;
+  };
+};
+
+// Contract Two
+var contractTwo = " ";
+var contractTwoState = false;
+const contractTwoIncome = 1000;
+const contractTwoCost = 250;
+document.getElementById('contractTwoCost').innerHTML = "£" + contractTwoCost;
+function buyContractTwo(){
+  if(money >= contractTwoCost && webDesignerNumber >= 1 && webDeveloperNumber >= 1){
+    contractTwo = "Contract Owned";
+    contractTwoState = true;
+    money = money - contractTwoCost;
+    document.getElementById('contractTwo').innerHTML = contractTwo;
+    document.getElementById('money').innerHTML = money;
+  } else if (webDesignerNumber < 1) {
+    alert("Hire More Designers and Try Again");
+  } else if (webDeveloperNumber < 1){
+    alert("Hire More Developers and Try Again");
+  };
+  if(contractTwoState === true){
+    document.getElementById('contractTwoBtn').disabled = true;
+    document.getElementById('contractTwoBtn').innerHTML = contractTwo;
+  };
+};
+
+// Contract Three
+var contractThree = " ";
+var contractThreeState = false;
+const contractThreeIncome = 2000;
+const contractThreeCost = 250;
+document.getElementById('contractThreeCost').innerHTML = "£" + contractThreeCost;
+
+function buyContractThree(){
+  if(money >= contractThreeCost && webDesignerNumber >= 2 && webDeveloperNumber >= 2 && seoSpecNumber >= 1){
+    contractThree = "Contract Owned";
+    contractThreeState = true;
+    money = money - contractThreeCost;
+    document.getElementById('contractThree').innerHTML = contractThree;
+    document.getElementById('money').innerHTML = money;
+  } else if (webDesignerNumber < 2) {
+    alert("Hire More Designers and Try Again");
+  } else if (webDeveloperNumber < 2){
+    alert("Hire More Developers and Try Again");
+  } else if (seoSpecNumber < 1){
+    alert("Hire More SEO Specialists and Try Again")
+  }
+  if(contractThreeState === true){
+    document.getElementById('contractThreeBtn').disabled = true;
+    document.getElementById('contractThreeBtn').innerHTML = contractThree;
+  };
+};
+
+// Contract Four
+var contractFour = " ";
+var contractFourState = 0;
+const contractFourIncome = 3500;
+const contractFourCost = 250;
+document.getElementById('contractFourCost').innerHTML = "£" + contractFourCost;
+
+function buyContractFour(){
+  if(money >= contractFourCost && webDesignerNumber >= 2 && webDeveloperNumber >= 2 && seoSpecNumber >= 1 && uiuxDesNumber >= 1){
+    contractFour = "Contract Owned";
+    contractFourState = 1;
+    money = money - contractFourCost;
+    document.getElementById('contractFour').innerHTML = contractFour;
+    document.getElementById('money').innerHTML = money;
+  } else if (webDesignerNumber < 2) {
+    alert("Hire More Designers and Try Again");
+  } else if (webDeveloperNumber < 2){
+    alert("Hire More Developers and Try Again");
+  } else if (seoSpecNumber < 1){
+    alert("Hire More SEO Specialists and Try Again")
+  } else if (uiuxDesNumber < 1){
+    alert("Hire More UI/UX Designers and Try Again")
+  }
+  if(contractFourState === true){
+    document.getElementById('contractFourBtn').disabled = true;
+    document.getElementById('contractFourBtn').innerHTML = contractFour;
   };
 };
 
@@ -351,10 +432,10 @@ function trainDevelopers(){
     document.getElementById('trainDevsBtn').innerHTML = "Upgraded";
   }
   else if(webDeveloperNumber < 1) {
-    console.log("Hire some developers then try training them");
+    alert("Hire some developers then try training them");
   }
   else if(money < trainDevelopersCost){
-    console.log("You dont have enough money, earn some more and try again.");
+    alert("You dont have enough money, earn some more and try again.");
   };
 };
 
@@ -375,10 +456,10 @@ function trainDesigners(){
     document.getElementById('trainDesBtn').innerHTML = "Upgraded";
   }
   else if(webDesignerNumber < 1) {
-    console.log("Hire some designers then try training them");
+    alert("Hire some designers then try training them");
   }
   else if(money < trainDesignersCost){
-    console.log("You dont have enough money, earn some more and try again.");
+    alert("You dont have enough money, earn some more and try again.");
   };
 };
 
@@ -399,10 +480,10 @@ function trainSeo(){
     document.getElementById('trainSeoBtn').innerHTML = "Upgraded";
   }
   else if(seoSpecNumber < 1) {
-    console.log("Hire some SEO Specialists then try training them");
+    alert("Hire some SEO Specialists then try training them");
   }
   else if(money < trainSeoCost){
-    console.log("You dont have enough money, earn some more and try again.");
+    alert("You dont have enough money, earn some more and try again.");
   };
 };
 
@@ -423,10 +504,10 @@ function trainUiux(){
     document.getElementById('trainUiuxBtn').innerHTML = "Upgraded";
   }
   else if(uiuxDesNumber < 1) {
-    console.log("Hire some SEO Specialists then try training them");
+    alert("Hire some SEO Specialists then try training them");
   }
   else if(money < trainUiuxCost){
-    console.log("You dont have enough money, earn some more and try again.");
+    alert("You dont have enough money, earn some more and try again.");
   };
 };
 
@@ -438,28 +519,36 @@ var month = 0;
 var year = 0;
 // Per Day
 window.setInterval(function(){
-
   day = day + 1;
   document.getElementById("day").innerHTML = day;
 
+  var webDesignerAmount = webDesignerMoney * webDesignerNumber;
+  var webDeveloperAmount = webDeveloperMoney * webDeveloperNumber;
+  var seoSpecAmount = seoSpecMoney * seoSpecNumber;
+  var uiuxDesAmount = uiuxDesMoney * uiuxDesNumber;
+  var fullstackDevAmount = fullstackDevMoney * fullstackDevNumber;
+
   if(webDesignerNumber >= 1){
-    incMoney(webDesignerMoney * webDesignerNumber);
+    incMoney(webDesignerAmount);
   };
   if(webDeveloperNumber >= 1){
-    incMoney(webDeveloperMoney * webDeveloperNumber);
+    incMoney(webDeveloperAmount);
   };
   if(seoSpecNumber >= 1){
-    incMoney(seoSpecMoney * seoSpecNumber);
+    incMoney(seoSpecAmount);
   };
   if(uiuxDesNumber >= 1){
-    incMoney(uiuxDesMoney * uiuxDesNumber);
+    incMoney(uiuxDesAmount);
   };
   if(fullstackDevNumber >= 1){
-    incMoney(fullstackDevMoney * fullstackDevNumber);
+    incMoney(fullstackDevAmount);
   };
   if(trainDeveloperActive === true){
     incMoney(trainDevelopersIncr);
   };
+
+  var income = fullstackDevAmount * 31 + uiuxDesAmount * 31 + seoSpecAmount * 31 + webDeveloperAmount * 31 + webDesignerAmount * 31;
+  document.getElementById("income").innerHTML = "Monthly Income: &pound" + income;
 }, 1000);
 
 // Per Month
@@ -471,7 +560,6 @@ window.setInterval(function(){
   document.getElementById("month").innerHTML = month;
 
   if(contractOneState >= 1){
-    var contractOneIncome = 1000;
     incMoney(contractOneIncome);
   };
   if(webDesignerNumber >= 1){
