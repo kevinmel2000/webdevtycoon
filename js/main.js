@@ -230,7 +230,7 @@ function buildingUpgradeOne(){
   var buildingTwoState = false;
   document.getElementById('buildingTwoPrice').innerHTML = buildingTwoCost;
   document.getElementById('buildingTwoRental').innerHTML = buildingTwoRent;
-function buildingUpgradeTwo(){
+  function buildingUpgradeTwo(){
     if(money >= buildingTwoCost){
         money = money - buildingTwoCost;
         maxWorkerNum = maxWorkerNum + 10;
@@ -325,9 +325,9 @@ function buyContractOne(){
     money = money - contractOneCost;
     document.getElementById('contractOne').innerHTML = contractOne;
     document.getElementById('money').innerHTML = money;
+    document.getElementById('contractOneBtn').disabled = true;
   };
   if(contractOneState === true){
-    document.getElementById('contractOneBtn').disabled = true;
     document.getElementById('contractOneBtn').innerHTML = contractOne;
   };
 };
@@ -664,10 +664,15 @@ function saveGame(){
     buildingThreeState: buildingThreeState,
     buildingFourState: buildingFourState,
     contractOneState: contractOneState,
+    contractTwoState: contractTwoState,
+    contractThreeState: contractThreeState,
+    contractFourState: contractFourState,
     trainDeveloperActive: trainDeveloperActive,
-    trainDesignersActive: trainDesignersActive
+    trainDesignersActive: trainDesignersActive,
+    trainSeoActive: trainSeoActive,
+    trainUiuxActive: trainUiuxActive
   };
-  console.log(gameData);
+  alert("Game Saved");
   localStorage.setItem("gameData", JSON.stringify(gameData));
 };
 
@@ -692,8 +697,13 @@ function loadGame(){
   buildingThreeState = loadGameData.buildingThreeState;
   buildingFourState = loadGameData.buildingFourState;
   contractOneState = loadGameData.contractOneState;
+  contractTwoState = loadGameData.contractTwoState;
+  contractThreeState = loadGameData.contractThreeState;
+  contractFourState = loadGameData.contractFourState;
   trainDeveloperActive = loadGameData.trainDeveloperActive;
   trainDesignersActive = loadGameData.trainDesignersActive;
+  trainSeoActive = loadGameData.trainSeoActive;
+  trainUiuxActive = loadGameData.trainUiuxActive;
 
   document.getElementById("day").innerHTML = day;
   document.getElementById("month").innerHTML = month;
@@ -706,6 +716,67 @@ function loadGame(){
   document.getElementById("seoSpecNumber").innerHTML = seoSpecNumber;
   document.getElementById("uiuxDesNumber").innerHTML = uiuxDesNumber;
   document.getElementById("fullstackDevNumber").innerHTML = fullstackDevNumber;
+
+  if(workerNum === maxWorkerNum){
+    var btn = document.getElementsByClassName("worker-btn");
+    for(var i = 0; i < btn.length; i++){
+    btn[i].disabled = true;
+    btn[i].innerHTML = "Upgrade Building";
+    };
+  };
+
+  if(buildingOneState === true){
+    document.getElementById('buildingUpgradeOneBtn').disabled = true;
+    document.getElementById('buildingUpgradeOneBtn').innerHTML = "Owned";
+  };
+
+  if(buildingTwoState === true){
+    document.getElementById('buildingUpgradeTwoBtn').disabled = true;
+    document.getElementById('buildingUpgradeTwoBtn').innerHTML = "Owned";
+  };
+
+  if(buildingThreeState === true){
+    document.getElementById('buildingUpgradeThreeBtn').disabled = true;
+    document.getElementById('buildingUpgradeThreeBtn').innerHTML = "Owned";
+  };
+
+  if(buildingFourState === true){
+    document.getElementById('buildingUpgradeFourBtn').disabled = true;
+    document.getElementById('buildingUpgradeFourBtn').innerHTML = "Owned";
+  };
+  if(trainDeveloperActive === true){
+    document.getElementById('trainDevsBtn').disabled = true;
+    document.getElementById('trainDevsBtn').innerHTML = "Upgraded";
+  };
+  if(trainDesignersActive === true){
+  document.getElementById('trainDesBtn').disabled = true;
+  document.getElementById('trainDesBtn').innerHTML = "Upgraded";
+  };
+  if(trainSeoActive === true){
+  document.getElementById('trainSeoBtn').disabled = true;
+  document.getElementById('trainSeoBtn').innerHTML = "Upgraded";
+  };
+  if(trainUiuxActive === true){
+  document.getElementById('trainUiuxBtn').disabled = true;
+  document.getElementById('trainUiuxBtn').innerHTML = "Upgraded";
+  };
+
+  if(contractOneState === true){
+    document.getElementById('contractOneBtn').innerHTML = "Contract Owned";
+    document.getElementById('contractOneBtn').disabled = true;
+  };
+  if(contractTwoState === true){
+    document.getElementById('contractTwoBtn').innerHTML = "Contract Owned";
+    document.getElementById('contractTwoBtn').disabled = true;
+  };
+  if(contractThreeState === true){
+    document.getElementById('contractThreeBtn').innerHTML = "Contract Owned";
+    document.getElementById('contractThreeBtn').disabled = true;
+  };
+  if(contractFourState === true){
+    document.getElementById('contractFourBtn').innerHTML = "Contract Owned";
+    document.getElementById('contractFourBtn').disabled = true;
+  };
 };
 function restart(){
   localStorage.removeItem("gameData");

@@ -2,7 +2,12 @@
 body{
   margin: 0px;
   padding: 0px;
-  overflow: hidden;
+}
+
+@media only screen and (min-width : 768px){
+  body{
+    overflow: hidden;
+  }
 }
 h2{
   padding: 0px;
@@ -188,6 +193,11 @@ p{
 .game-right-menu{
   height: 10vh;
 }
+@media only screen and (max-width : 768px){
+  .game-right-menu{
+    border-top: 1px solid #bdc3c7;
+  }
+}
 .game-right-menu ul{
   margin: 0px;
   padding: 0px;
@@ -234,6 +244,7 @@ p{
 @media only screen and (max-width : 768px){
   .game-left{
     max-width: 100%;
+    border-right: none !important;
   }
 }
 .game-left h3{
